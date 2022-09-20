@@ -1,2 +1,0 @@
-# alx-higher_level_programming
-this is project 0x01-python-if_else_loops_functions
