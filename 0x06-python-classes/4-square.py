@@ -1,16 +1,19 @@
 #!/usr/bin/python3
+"""Class"""
 
 class Square:
-
+    """Class Square"""
     def __init__(self, size=0):
         self.size = size
 
     @property
     def size(self):
+        """Size of Square"""
         return (self.__size)
 
     @size.setter
     def size(self, value):
+        """ size and vlaue"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -18,4 +21,5 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Area"""
         return (self.__size * self.__size)
