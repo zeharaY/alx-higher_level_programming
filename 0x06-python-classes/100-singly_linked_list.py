@@ -1,39 +1,47 @@
 #!/usr/bin/python3
+"""Class"""
 
 class Node:
-
+    """Class Node"""
     def __init__(self, data, next_node=None):
+        """__init__"""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """data"""
         return (self.__data)
 
     @data.setter
     def data(self, value):
+        """data"""
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
+        """next_node"""
         return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
+        """next_node"""
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
+"""Class SinglyLinkedList"""
 
     def __init__(self):
+        """__init__"""
         self.__head = None
 
     def sorted_insert(self, value):
-
+        """sorted_insert"""
         new = Node(value)
         if self.__head is None:
             new.next_node = None
@@ -50,6 +58,7 @@ class SinglyLinkedList:
             tmp.next_node = new
 
     def __str__(self):
+        """__str__"""
         values = []
         tmp = self.__head
         while tmp is not None:
