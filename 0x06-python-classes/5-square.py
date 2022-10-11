@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""Class"""
 
 class Square:
-
+    """Class Square"""
     def __init__(self, size):
         self.size = size
 
@@ -18,9 +19,11 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Area"""
         return (self.__size * self.__size)
 
     def my_print(self):
+        """my_print"""
         for i in range(0, self.__size):
             [print("#", end="") for j in range(self.__size)]
             print("")
