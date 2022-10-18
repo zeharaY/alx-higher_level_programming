@@ -1,0 +1,94 @@
+Text is printed with two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hi.")
+    Hi.
+    <BLANKLINE>
+
+No spaces are printed at the beginning of a line.
+
+::
+
+    >>> text_indentation("   Hi there.")
+    Hi there.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("          ")
+
+Similarly, no spaces are printed at the end of each printed line.
+
+::
+
+    >>> text_indentation("Hi.   ")
+    Hi.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("    hi there.    how are you?   ")
+    hi there.
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
+
+New lines are only printed for the characters ``.``, ``?``, and ``:`` -
+text not ending with one of these characters is not ended with a new line.
+
+::
+
+    >>> text_indentation("No ending period, what bad grammar")
+    No ending period, what bad grammar
+
+New lines within a string are printed as normal.
+
+::
+
+    >>> text_indentation("hi there. How are you?\nNew line.")
+    hi there. How are you?
+    <BLANKLINE>
+    <BLANKLINE>
+    New line.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("\n\nprinting two new lines.")
+    <BLANKLINE>
+    <BLANKLINE>
+	printing two new lines.
+    <BLANKLINE>
+
+::
+    >>> text_indentation("hi  \n there.")
+    hi 
+    there
+    <BLANKLINE>
+
+
+Invalid Text
+============
+
+The paramter ``text`` must be a string. Otherwise, a TypeError is raised.
+
+::
+
+    >>> text_indentation(7)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation({"one": 1, "two": 2})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
