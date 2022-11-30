@@ -1,5 +1,4 @@
 -- Creates the database hbtn_0d_2 and the user user_0d_2 with SELECT privilege
--- on hbtn_0d_2 
 CREATE DATABASE
     IF NOT EXISTS `hbtn_0d_2`;
 CREATE USER
